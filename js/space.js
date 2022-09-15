@@ -26,23 +26,24 @@ const buttomBuscar = document.getElementById("btnBuscar");
 
 buttomBuscar.addEventListener("click", (e) => {
     const search = document.getElementById("inputBuscar");
+
     getImages(search.value).then(items => loadImages(items));
 })
+
 const getImages = (search) => {
-    return getJSONData(`${API_URL}${searchURL}${search.value}`);
+    return getJSONData(`${API_URL}${searchURL}${search}`);
 }
 
 const loadImages = (data) => {
-    console.log("Hola");
+
     let contenedor = document.getElementById("contenedor");
     contenedor.innerHTML = "";
-    console.log(data);
-    for (let objeto of Array.from(data)) {
+    console.log(Array.from(data));
+    for (let item of Array.from(data)) {
 
-        console.log("Hola");
         contenedor.innerHTML += `<div class="card">
-        <img src="${objeto.href}" />
-        <h3>${objeto.title}</h3>
+        <img src="${item.links[0].href}" />
+        <h3>${item.data[0].title}</h3>
         
     </div>`
     }
@@ -53,7 +54,7 @@ const loadImages = (data) => {
 //     return `<div class="card">
 //       <img src="${objeto.href}" />
 //       <h3>${objeto.title}</h3>
-      
+
 //   </div>`;
 // };
 
