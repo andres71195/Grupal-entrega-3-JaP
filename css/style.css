@@ -1,3 +1,36 @@
 main {
     min-height: calc(100vh - 160px);
+    display:flex;
+    flex-direction: column;
   }
+
+
+  footer {
+    margin-top: auto;
+
+  }
+
+  .card{
+    display: list-item;
+    width: 400px;
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 20px;
+    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    text-align: justify;
+    float: left;
+}
+
+
+.card img{
+  width: 370px;
+  height: 150px;
+}
